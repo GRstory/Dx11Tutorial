@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"Select-String -Path \\\"c:\\\\Users\\\\EmberCove.DESKTOP-JMH4MOP\\\\Desktop\\\\Hongik\\\\2026-1\\\\컴퓨터 그래픽스\\\\C5192005_김준명_PA4\\\\Framework\\\\d3dclass.cpp\\\" -Pattern \\\"alpha\\\" -CaseSensitive:$false | Select...",
+  "error": "Exit code 127\n/usr/bin/bash: line 1: Select-String: command not found\n/usr/bin/bash: line 1: Select-Object: command not found",
+  "timestamp": "2026-06-04T04:26:31.389Z",
+  "retry_count": 1
+}
