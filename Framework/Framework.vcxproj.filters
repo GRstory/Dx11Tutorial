@@ -77,6 +77,12 @@
     <ClCompile Include="bitmapclass.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="WindTurbineRotor.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BillBoardClass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="d3dclass.h">
@@ -127,7 +133,6 @@
     <ClInclude Include="RenderSystem.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="HudUI.h" />
     <ClInclude Include="textclass.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
@@ -139,6 +144,15 @@
     </ClInclude>
     <ClInclude Include="bitmapclass.h">
       <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="WindTurbineRotor.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BillBoardClass.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="HudUI.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

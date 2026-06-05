@@ -57,10 +57,14 @@ private:
 	bool ReadFileCounts(const WCHAR*);
 	bool LoadDataStructures(const WCHAR*, int, int, int, int);
 
+public:
+	bool b_isBillboard = false;
+
 private:
 	ID3D11Buffer* m_vertexBuffer = nullptr;
 	ID3D11Buffer* m_indexBuffer  = nullptr;
 	int m_vertexCount, m_indexCount, m_textureCount, m_normalCount, m_faceCount;
-	TextureClass* m_Texture = nullptr;
-	ModelType*    m_model   = nullptr;
+	TextureClass* m_Texture  = nullptr;
+	ModelType*    m_model    = nullptr;
+	wstring       m_meshPath;
 };

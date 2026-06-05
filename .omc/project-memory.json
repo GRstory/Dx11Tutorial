@@ -1,0 +1,246 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1780624468239,
+  "projectRoot": "c:\\Users\\EmberCove.DESKTOP-JMH4MOP\\Documents\\GitHub\\Dx11Tutorial",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "Debug": {
+      "path": "Debug",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1780624468203,
+      "keyFiles": [
+        "Framework.exe",
+        "Framework.pdb"
+      ]
+    },
+    "Framework": {
+      "path": "Framework",
+      "purpose": null,
+      "fileCount": 47,
+      "lastAccessed": 1780624468203,
+      "keyFiles": [
+        "Actor.cpp",
+        "Actor.h",
+        "AlignedAllocationPolicy.h",
+        "bitmapclass.cpp",
+        "bitmapclass.h"
+      ]
+    },
+    "Release": {
+      "path": "Release",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1780624468203,
+      "keyFiles": [
+        "Framework.exe",
+        "Framework.pdb"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "Framework\\graphicsclass.cpp",
+      "accessCount": 43,
+      "lastAccessed": 1780639630975,
+      "type": "file"
+    },
+    {
+      "path": "fix_turbines.py",
+      "accessCount": 9,
+      "lastAccessed": 1780630454889,
+      "type": "file"
+    },
+    {
+      "path": "Framework",
+      "accessCount": 7,
+      "lastAccessed": 1780631187852,
+      "type": "directory"
+    },
+    {
+      "path": "Framework\\BillBoardClass.cpp",
+      "accessCount": 7,
+      "lastAccessed": 1780639528559,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\graphicsclass.h",
+      "accessCount": 6,
+      "lastAccessed": 1780631441160,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\BillBoardClass.h",
+      "accessCount": 6,
+      "lastAccessed": 1780636918180,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 6,
+      "lastAccessed": 1780636981120,
+      "type": "directory"
+    },
+    {
+      "path": "Framework\\RenderSystem.h",
+      "accessCount": 4,
+      "lastAccessed": 1780625400500,
+      "type": "file"
+    },
+    {
+      "path": "gen_new.py",
+      "accessCount": 4,
+      "lastAccessed": 1780629693365,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\RenderSystem.cpp",
+      "accessCount": 3,
+      "lastAccessed": 1780631242741,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\ModelComponent.h",
+      "accessCount": 2,
+      "lastAccessed": 1780625417723,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\ModelComponent.cpp",
+      "accessCount": 2,
+      "lastAccessed": 1780625432450,
+      "type": "file"
+    },
+    {
+      "path": "gen_replace.py",
+      "accessCount": 2,
+      "lastAccessed": 1780628142798,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\systemclass.cpp",
+      "accessCount": 2,
+      "lastAccessed": 1780631082899,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\Actor.h",
+      "accessCount": 2,
+      "lastAccessed": 1780631194667,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\playerclass.h",
+      "accessCount": 2,
+      "lastAccessed": 1780631195176,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\playerclass.cpp",
+      "accessCount": 2,
+      "lastAccessed": 1780631200188,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\TransformComponent.h",
+      "accessCount": 2,
+      "lastAccessed": 1780631245957,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\TransformComponent.cpp",
+      "accessCount": 2,
+      "lastAccessed": 1780631252380,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\WindTurbineRotor.h",
+      "accessCount": 2,
+      "lastAccessed": 1780632012749,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\WindTurbineRotor.cpp",
+      "accessCount": 2,
+      "lastAccessed": 1780632022528,
+      "type": "file"
+    },
+    {
+      "path": "gen_trees.py",
+      "accessCount": 1,
+      "lastAccessed": 1780627412867,
+      "type": "file"
+    },
+    {
+      "path": "tree_data.txt",
+      "accessCount": 1,
+      "lastAccessed": 1780627434894,
+      "type": "file"
+    },
+    {
+      "path": "new_block.txt",
+      "accessCount": 1,
+      "lastAccessed": 1780627531078,
+      "type": "file"
+    },
+    {
+      "path": "apply_new.py",
+      "accessCount": 1,
+      "lastAccessed": 1780629724740,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\Actor.cpp",
+      "accessCount": 1,
+      "lastAccessed": 1780631068711,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\systemclass.h",
+      "accessCount": 1,
+      "lastAccessed": 1780631076599,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\cameraclass.h",
+      "accessCount": 1,
+      "lastAccessed": 1780634601911,
+      "type": "file"
+    },
+    {
+      "path": "Framework\\cameraclass.cpp",
+      "accessCount": 1,
+      "lastAccessed": 1780636984188,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

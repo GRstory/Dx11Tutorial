@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="BillBoardClass.cpp" />
     <ClCompile Include="bitmapclass.cpp" />
     <ClCompile Include="cameraclass.cpp" />
     <ClCompile Include="Component.cpp" />
@@ -160,10 +161,12 @@
     <ClCompile Include="textureclass.cpp" />
     <ClCompile Include="textureshaderclass.cpp" />
     <ClCompile Include="TransformComponent.cpp" />
+    <ClCompile Include="WindTurbineRotor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="AlignedAllocationPolicy.h" />
+    <ClInclude Include="BillBoardClass.h" />
     <ClInclude Include="bitmapclass.h" />
     <ClInclude Include="cameraclass.h" />
     <ClInclude Include="Component.h" />
@@ -183,6 +186,7 @@
     <ClInclude Include="textureclass.h" />
     <ClInclude Include="textureshaderclass.h" />
     <ClInclude Include="TransformComponent.h" />
+    <ClInclude Include="WindTurbineRotor.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\font.dds" />

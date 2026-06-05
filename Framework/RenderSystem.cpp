@@ -2,6 +2,7 @@
 #include "ModelComponent.h"
 #include "Actor.h"
 #include "TransformComponent.h"
+#include "d3dclass.h"
 
 
 RenderSystem& RenderSystem::GetInstance()
@@ -11,9 +12,10 @@ RenderSystem& RenderSystem::GetInstance()
 }
 
 
-bool RenderSystem::Initialize(ID3D11Device* device, HWND hwnd)
+bool RenderSystem::Initialize(ID3D11Device* device, HWND hwnd, D3DClass* d3d)
 {
     m_Shader = new TextureShaderClass;
+    m_D3D = d3d;
     if (!m_Shader) return false;
     return m_Shader->Initialize(device, hwnd);
 }
@@ -28,6 +30,31 @@ void RenderSystem::Shutdown()
         m_Shader = nullptr;
     }
     _components.clear();
+
+    for (auto& pair : m_meshCache)
+    {
+        if (pair.second.vertexBuffer) pair.second.vertexBuffer->Release();
+        if (pair.second.indexBuffer)  pair.second.indexBuffer->Release();
+    }
+    m_meshCache.clear();
+}
+
+
+bool RenderSystem::GetMesh(const wstring& path, ID3D11Buffer*& outVB, ID3D11Buffer*& outIB, int& outIndexCount)
+{
+    auto it = m_meshCache.find(path);
+    if (it == m_meshCache.end()) return false;
+
+    outVB         = it->second.vertexBuffer;
+    outIB         = it->second.indexBuffer;
+    outIndexCount = it->second.indexCount;
+    return true;
+}
+
+
+void RenderSystem::RegisterMesh(const wstring& path, ID3D11Buffer* vb, ID3D11Buffer* ib, int indexCount)
+{
+    m_meshCache[path] = { vb, ib, indexCount };
 }
 
 
@@ -54,6 +81,11 @@ bool RenderSystem::RenderAll(ID3D11DeviceContext* context, XMMATRIX viewMatrix, 
         ModelComponent* modelComponent = pair.first;
         TransformComponent* transform = pair.second;
 
+        if (modelComponent->b_isBillboard)
+        {
+            m_D3D->TurnOnAlphaBlending();
+        }
+
         modelComponent->Render(context);
         if (!m_Shader->Render(context, modelComponent->GetIndexCount(),
             transform->GetWorldMatrix(), viewMatrix, projectionMatrix, modelComponent->GetTexture()))
@@ -61,6 +93,11 @@ bool RenderSystem::RenderAll(ID3D11DeviceContext* context, XMMATRIX viewMatrix, 
 
         m_polygonCount += modelComponent->GetIndexCount() / 3;
         m_objectCount++;
+
+        if (modelComponent->b_isBillboard)
+        {
+            m_D3D->TurnOffAlphaBlending();
+        }
     }
     return true;
 }

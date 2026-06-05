@@ -29,19 +29,18 @@ ModelComponent::~ModelComponent()
 
 bool ModelComponent::Initialize(ID3D11Device* device, const WCHAR* modelFilename, const WCHAR* textureFilename)
 {
-	bool result;
+	m_meshPath = modelFilename;
 
-	result = LoadModel(modelFilename);
-	if (!result) return false;
+	if (!RenderSystem::GetInstance().GetMesh(m_meshPath, m_vertexBuffer, m_indexBuffer, m_indexCount))
+	{
+		if (!LoadModel(modelFilename))    return false;
+		if (!InitializeBuffers(device))   return false;
+		RenderSystem::GetInstance().RegisterMesh(m_meshPath, m_vertexBuffer, m_indexBuffer, m_indexCount);
+	}
 
-	result = InitializeBuffers(device);
-	if (!result) return false;
-
-	result = LoadTexture(device, textureFilename);
-	if (!result) return false;
+	if (!LoadTexture(device, textureFilename)) return false;
 
 	RenderSystem::GetInstance().Register(this);
-
 	return true;
 }
 
@@ -124,17 +123,9 @@ bool ModelComponent::InitializeBuffers(ID3D11Device* device)
 
 void ModelComponent::ShutdownBuffers()
 {
-	if (m_indexBuffer)
-	{
-		m_indexBuffer->Release();
-		m_indexBuffer = 0;
-	}
-
-	if (m_vertexBuffer)
-	{
-		m_vertexBuffer->Release();
-		m_vertexBuffer = 0;
-	}
+	// 버퍼 소유권은 RenderSystem의 MeshCache에 있으므로 Release하지 않음
+	m_indexBuffer  = 0;
+	m_vertexBuffer = 0;
 }
 
 
