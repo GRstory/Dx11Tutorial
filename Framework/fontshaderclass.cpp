@@ -50,8 +50,8 @@ void FontShaderClass::Shutdown()
 }
 
 
-bool FontShaderClass::Render(ID3D11DeviceContext* deviceContext, int indexCount, 
-	XMMATRIX worldMatrix, XMMATRIX viewMatrix, XMMATRIX projectionMatrix, 
+bool FontShaderClass::Render(ID3D11DeviceContext* deviceContext, int indexCount,
+	CXMMATRIX worldMatrix, CXMMATRIX viewMatrix, CXMMATRIX projectionMatrix,
 	ID3D11ShaderResourceView* texture, XMFLOAT4 pixelColor)
 {
 	bool result;
@@ -319,8 +319,8 @@ void FontShaderClass::OutputShaderErrorMessage(ID3D10Blob* errorMessage, HWND hw
 }
 
 
-bool FontShaderClass::SetShaderParameters(ID3D11DeviceContext* deviceContext, 
-	XMMATRIX worldMatrix, XMMATRIX viewMatrix, XMMATRIX projectionMatrix, 
+bool FontShaderClass::SetShaderParameters(ID3D11DeviceContext* deviceContext,
+	CXMMATRIX worldMatrix, CXMMATRIX viewMatrix, CXMMATRIX projectionMatrix,
 	ID3D11ShaderResourceView* texture, XMFLOAT4 pixelColor)
 {
 	HRESULT result;
@@ -329,6 +329,9 @@ bool FontShaderClass::SetShaderParameters(ID3D11DeviceContext* deviceContext,
 	unsigned int bufferNumber;
 	PixelBufferType* dataPtr2;
 
+	XMMATRIX w = XMMatrixTranspose(worldMatrix);
+	XMMATRIX v = XMMatrixTranspose(viewMatrix);
+	XMMATRIX p = XMMatrixTranspose(projectionMatrix);
 
 	// Lock the constant buffer so it can be written to.
 	result = deviceContext->Map(m_constantBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
@@ -340,15 +343,10 @@ bool FontShaderClass::SetShaderParameters(ID3D11DeviceContext* deviceContext,
 	// Get a pointer to the data in the constant buffer.
 	dataPtr = (ConstantBufferType*)mappedResource.pData;
 
-	// Transpose the matrices to prepare them for the shader.
-	worldMatrix = XMMatrixTranspose(worldMatrix);
-	viewMatrix = XMMatrixTranspose(viewMatrix);
-	projectionMatrix = XMMatrixTranspose(projectionMatrix);
-
 	// Copy the matrices into the constant buffer.
-	dataPtr->world = worldMatrix;
-	dataPtr->view = viewMatrix;
-	dataPtr->projection = projectionMatrix;
+	dataPtr->world = w;
+	dataPtr->view = v;
+	dataPtr->projection = p;
 
 	// Unlock the constant buffer.
     deviceContext->Unmap(m_constantBuffer, 0);

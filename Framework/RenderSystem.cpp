@@ -71,7 +71,7 @@ void RenderSystem::Unregister(ModelComponent* component)
 }
 
 
-bool RenderSystem::RenderAll(ID3D11DeviceContext* context, XMMATRIX viewMatrix, XMMATRIX projectionMatrix)
+bool RenderSystem::RenderAll(ID3D11DeviceContext* context, CXMMATRIX viewMatrix, CXMMATRIX projectionMatrix)
 {
     m_polygonCount = 0;
     m_objectCount  = 0;
@@ -103,7 +103,7 @@ bool RenderSystem::RenderAll(ID3D11DeviceContext* context, XMMATRIX viewMatrix, 
 }
 
 
-bool RenderSystem::RenderBitmap(ID3D11DeviceContext* context, int indexCount, XMMATRIX world, XMMATRIX view, XMMATRIX proj, ID3D11ShaderResourceView* texture)
+bool RenderSystem::RenderBitmap(ID3D11DeviceContext* context, int indexCount, CXMMATRIX world, CXMMATRIX view, CXMMATRIX proj, ID3D11ShaderResourceView* texture)
 {
     return m_Shader->Render(context, indexCount, world, view, proj, texture);
 }

@@ -27,8 +27,8 @@ public:
     void Register(ModelComponent* component);
     void Unregister(ModelComponent* component);
 
-    bool RenderAll(ID3D11DeviceContext* context, XMMATRIX viewMatrix, XMMATRIX projectionMatrix);
-    bool RenderBitmap(ID3D11DeviceContext* context, int indexCount, XMMATRIX world, XMMATRIX view, XMMATRIX proj, ID3D11ShaderResourceView* texture);
+    bool RenderAll(ID3D11DeviceContext* context, CXMMATRIX viewMatrix, CXMMATRIX projectionMatrix);
+    bool RenderBitmap(ID3D11DeviceContext* context, int indexCount, CXMMATRIX world, CXMMATRIX view, CXMMATRIX proj, ID3D11ShaderResourceView* texture);
     void SetFilter(ID3D11Device* device, D3D11_FILTER filter);
 
     int GetPolygonCount() const { return m_polygonCount; }

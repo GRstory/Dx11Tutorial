@@ -34,9 +34,9 @@ public:
 	TextClass();
 	~TextClass();
 
-	bool Initialize(ID3D11Device*, ID3D11DeviceContext*, HWND, int, int, XMMATRIX);
+	bool Initialize(ID3D11Device*, ID3D11DeviceContext*, HWND, int, int, CXMMATRIX);
 	void Shutdown();
-	bool Render(ID3D11DeviceContext*, XMMATRIX, XMMATRIX);
+	bool Render(ID3D11DeviceContext*, CXMMATRIX, CXMMATRIX);
 	bool SetFPS(int, ID3D11DeviceContext*);
 	bool SetCPU(int, ID3D11DeviceContext*);
 	bool SetObjectCount(int, ID3D11DeviceContext*);
@@ -48,7 +48,7 @@ private:
 	bool InitializeSentence(SentenceType**, int, ID3D11Device*);
 	bool UpdateSentence(SentenceType*, const char*, int, int, float, float, float, ID3D11DeviceContext*);
 	void ReleaseSentence(SentenceType**);
-	bool RenderSentence(ID3D11DeviceContext*, SentenceType*, XMMATRIX, XMMATRIX);
+	bool RenderSentence(ID3D11DeviceContext*, SentenceType*, CXMMATRIX, CXMMATRIX);
 
 private:
 	FontClass* m_Font = nullptr;

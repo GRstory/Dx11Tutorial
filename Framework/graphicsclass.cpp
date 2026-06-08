@@ -176,7 +176,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd, Inp
 		L"./data/WindTurbineTower_Tex.dds",
 	};
 	vector<float> sizes = {
-		1.0f, 50.0f, 50.0f, 20.0f, 8.0f, 8.0f, 8.0f, 8.0f,
+		0.5f, 50.0f, 50.0f, 20.0f, 8.0f, 8.0f, 8.0f, 8.0f,
 		8.0f, 8.0f, 8.0f, 8.0f, 8.0f, 8.0f, 8.0f, 8.0f,
 		8.0f, 8.0f, 8.0f, 8.0f, 8.0f, 8.0f, 8.0f, 8.0f,
 		8.0f, 8.0f, 8.0f, 8.0f, 8.0f, 8.0f, 8.0f, 8.0f,
@@ -577,8 +577,8 @@ bool GraphicsClass::Render()
 
 	m_D3D->BeginScene(0.0f, 0.0f, 0.0f, 1.0f);
 
-	m_Camera->GetViewMatrix(viewMatrix);
 	m_D3D->GetWorldMatrix(worldMatrix);
+	m_Camera->GetViewMatrix(viewMatrix);
 	m_D3D->GetProjectionMatrix(projectionMatrix);
 	m_D3D->GetOrthoMatrix(orthoMatrix);
 

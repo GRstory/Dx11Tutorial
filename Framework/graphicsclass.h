@@ -15,6 +15,7 @@
 #include "RenderSystem.h"
 #include "playerclass.h"
 #include "inputclass.h"
+#include "AlignedAllocationPolicy.h"
 #include <vector>
 
 
@@ -30,7 +31,7 @@ const float SCREEN_NEAR = 0.1f;
 ////////////////////////////////////////////////////////////////////////////////
 // Class name: GraphicsClass
 ////////////////////////////////////////////////////////////////////////////////
-class GraphicsClass
+class GraphicsClass : public AlignedAllocationPolicy<16>
 {
 public:
 	GraphicsClass();
