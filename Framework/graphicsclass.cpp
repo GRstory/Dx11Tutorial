@@ -467,7 +467,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd, Inp
 		}
 
 		// Initialize the bitmap object.
-		result = m_Bitmap->Initialize(m_D3D->GetDevice(), screenWidth, screenHeight, L"./data/title.dds", screenWidth, screenHeight);
+		result = m_Bitmap->Initialize(m_D3D->GetDevice(), screenWidth, screenHeight, L"./data/title2.dds", screenWidth, screenHeight);
 		if (!result)
 		{
 			MessageBox(hwnd, L"Could not initialize the bitmap object.", L"Error", MB_OK);
@@ -547,15 +547,15 @@ bool GraphicsClass::Frame(int fps, int cpu)
 
 		for (auto& actor : m_ActorList)
 			actor->Update();
-
-		m_Camera->FollowTarget(
-			m_Player->GetPosition(),
-			m_Player->GetLocalUp(),
-			m_Player->GetLocalForward(),
-			3.0f,
-			1.5f
-		);
 	}
+
+	m_Camera->FollowTarget(
+		m_Player->GetPosition(),
+		m_Player->GetLocalUp(),
+		m_Player->GetLocalForward(),
+		3.0f,
+		1.5f
+	);
 
 	result = Render();
 	if (!result) return false;
@@ -586,6 +586,7 @@ bool GraphicsClass::Render()
 	if (!result) return false;
 
 	m_D3D->TurnZBufferOff();
+	m_D3D->TurnOnAlphaBlending();
 	if (m_showBitmap)
 	{
 		result = m_Bitmap->Render(m_D3D->GetDeviceContext(), 0, 0);
@@ -596,7 +597,6 @@ bool GraphicsClass::Render()
 			worldMatrix, m_baseViewMatrix, orthoMatrix, m_Bitmap->GetTexture());
 		if (!result) return false;
 	}
-	m_D3D->TurnOnAlphaBlending();
 	result = m_Text->Render(m_D3D->GetDeviceContext(), worldMatrix, orthoMatrix);
 	if (!result) return false;
 	m_D3D->TurnOffAlphaBlending();
