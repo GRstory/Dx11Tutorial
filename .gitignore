@@ -73,3 +73,12 @@ Testing/
 
 .vs/
 *.ipch
+
+# OMC plugin
+.omc/
+
+# Build output directories
+Release/
+Debug/
+Framework/Release/
+Framework/Debug/

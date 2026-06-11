@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"Get-ChildItem \\\"c:\\\\Users\\\\EmberCove.DESKTOP-JMH4MOP\\\\Documents\\\\GitHub\\\\Dx11Tutorial\\\\Framework\\\\data\\\" | Where-Object {$_.Name -imatch \\\"turbine|rotor|wind\\\"}\",\"description\":\"List turbin...",
-  "error": "Exit code 127\n/usr/bin/bash: line 1: Get-ChildItem: command not found\n/usr/bin/bash: line 1: Where-Object: command not found",
-  "timestamp": "2026-06-05T03:46:23.654Z",
-  "retry_count": 2
-}
